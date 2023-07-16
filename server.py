@@ -9,5 +9,9 @@ def login():
 def dashboard():
     return render_template('dashboard.html')
 
+@app.route('/posts/create')
+def create_post():
+    return render_template('create_post.html')
+
 if __name__ == '__main__':
     app.run(debug=True)

@@ -1,5 +1,5 @@
 from flask_app import app
-from flask import render_template
+from flask import render_template,redirect
 
 @app.route('/')
 def login():
@@ -9,9 +9,13 @@ def login():
 def dashboard():
     return render_template('dashboard.html')
 
+@app.route('/posts/add_post')
+def add_post():
+    return render_template('create_post.html')
+
 @app.route('/posts/create')
 def create_post():
-    return render_template('create_post.html')
+    return redirect('/dashboard')
 
 if __name__ == '__main__':
     app.run(debug=True)
